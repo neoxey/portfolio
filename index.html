@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Navaneeth — Student building real systems, not just learning theory." />
+  <title>Navaneeth · Portfolio</title>
+  <!-- No favicon so no web icon appears in the search/address bar -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo"><span class="prompt-char">~/</span>navaneeth</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home"     class="nav-link">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"  id="theme-icon-sun"></i>
+          <i class="fas fa-moon" id="theme-icon-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-grid-bg"></div>
+
+    <div class="term-window">
+      <div class="term-bar">
+        <span class="tdot tdot-r"></span>
+        <span class="tdot tdot-y"></span>
+        <span class="tdot tdot-g"></span>
+        <span class="term-title">navaneeth@homeserver:~</span>
+      </div>
+      <div class="term-body" id="term-body"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Student &amp; System Builder</span>
+      </div>
+      <h1 class="hero-name">Navaneeth</h1>
+      <p class="hero-tagline">Building real systems,<br>not just learning theory.</p>
+      <p class="hero-stack">
+        <span>Linux</span><span class="divider">/</span>
+        <span>SSH</span><span class="divider">/</span>
+        <span>Nginx</span><span class="divider">/</span>
+        <span>Pi-hole</span><span class="divider">/</span>
+        <span>Samba</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+        <a href="#contact"  class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="sec-tag">~/about</span>
+        <h2 class="sec-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">Hi, I'm Navaneeth — a student focused on learning technology by building real systems.</p>
+          <p>I have hands-on experience setting up a home server using Linux, configuring SSH, running Pi-hole for network-level ad blocking, and hosting services using Nginx. I've worked on solving real issues like port conflicts, service failures, and system configuration problems.</p>
+          <p>I'm comfortable working in the terminal and debugging problems step by step. My goal is to build practical systems that actually work in real-world scenarios.</p>
+          <div class="about-stats">
+            <div class="astat">
+              <span class="astat-num" data-target="5">0</span>
+              <span class="astat-label">Projects Built</span>
+            </div>
+            <div class="astat">
+              <span class="astat-num" data-target="3">0</span>
+              <span class="astat-label">Years Learning</span>
+            </div>
+            <div class="astat">
+              <span class="astat-num" data-target="6">0</span>
+              <span class="astat-label">Technologies</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-side reveal">
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-bolt"></i> Strengths</h3>
+            <ul class="info-list">
+              <li><i class="fas fa-check-circle"></i> Learns by doing, not just reading</li>
+              <li><i class="fas fa-check-circle"></i> Strong problem-solving mindset</li>
+              <li><i class="fas fa-check-circle"></i> Comfortable with terminal &amp; Linux</li>
+              <li><i class="fas fa-check-circle"></i> Persistent when debugging issues</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title"><i class="fas fa-graduation-cap"></i> Currently Learning</h3>
+            <ul class="info-list">
+              <li><i class="fas fa-chevron-right"></i> Web Development</li>
+              <li><i class="fas fa-chevron-right"></i> Server Management</li>
+              <li><i class="fas fa-chevron-right"></i> Networking Fundamentals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="sec-tag">~/projects</span>
+        <h2 class="sec-title">What I've Built</h2>
+        <p class="sec-sub">Real systems, running on real hardware.</p>
+      </div>
+      <div class="projects-grid">
+
+        <!-- ─── Card 1: Home Server ─── -->
+        <article class="proj-card reveal" style="--delay:0ms">
+          <div class="proj-icon-wrap color-server"><i class="fas fa-server"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Linux</span>
+              <span class="ptag">Systemd</span>
+              <span class="ptag">SSH</span>
+              <span class="ptag">Firewall</span>
+            </div>
+            <h3 class="proj-title">Home Server Setup</h3>
+            <p class="proj-desc">Built and configured a personal home server from scratch using Linux. Set up systemd services, user permissions, firewall rules, and remote SSH access. Solved real issues including boot failures and service conflicts during setup.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon a-laptop"><i class="fas fa-laptop"></i></div>
+                  <span>Hardware</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-linux"><i class="fab fa-linux"></i></div>
+                  <span>Ubuntu</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-systemd"><i class="fas fa-cogs"></i></div>
+                  <span>Systemd</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-fw"><i class="fas fa-fire"></i></div>
+                  <span>Firewall</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-ssh"><i class="fas fa-key"></i></div>
+                  <span>SSH</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Live on home network</div>
+          </div>
+        </article>
+
+        <!-- ─── Card 2: Pi-hole ─── -->
+        <article class="proj-card reveal" style="--delay:80ms">
+          <div class="proj-icon-wrap color-pihole"><i class="fas fa-shield-halved"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">DNS</span>
+              <span class="ptag">Pi-hole</span>
+              <span class="ptag">DHCP</span>
+              <span class="ptag">Networking</span>
+            </div>
+            <h3 class="proj-title">Pi-hole Ad Blocking Server</h3>
+            <p class="proj-desc">Deployed Pi-hole as a network-wide DNS-based ad blocker. Configured custom blocklists, whitelists, and DHCP settings. Resolved DNS conflicts with the home router to get it running cleanly across all devices.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon a-device"><i class="fas fa-mobile-alt"></i></div>
+                  <span>Devices</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-pihole"><i class="fas fa-shield-halved"></i></div>
+                  <span>Pi-hole</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-dns"><i class="fas fa-sitemap"></i></div>
+                  <span>DNS Filter</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-router"><i class="fas fa-network-wired"></i></div>
+                  <span>Router</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-internet"><i class="fas fa-globe"></i></div>
+                  <span>Internet</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Blocking ads network-wide</div>
+          </div>
+        </article>
+
+        <!-- ─── Card 3: Samba ─── -->
+        <article class="proj-card reveal" style="--delay:160ms">
+          <div class="proj-icon-wrap color-samba"><i class="fas fa-folder-open"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Samba</span>
+              <span class="ptag">SMB</span>
+              <span class="ptag">Linux</span>
+              <span class="ptag">Auth</span>
+            </div>
+            <h3 class="proj-title">Samba File Sharing System</h3>
+            <p class="proj-desc">Set up a Samba file server on Linux to share directories across Windows and Linux machines. Configured user authentication and share permissions, and debugged common SMB access and credential issues from scratch.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon a-win"><i class="fab fa-windows"></i></div>
+                  <span>Windows</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-smb"><i class="fas fa-network-wired"></i></div>
+                  <span>SMB/LAN</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-samba"><i class="fas fa-folder-open"></i></div>
+                  <span>Samba</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-auth"><i class="fas fa-user-lock"></i></div>
+                  <span>Auth</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-disk"><i class="fas fa-hard-drive"></i></div>
+                  <span>Storage</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Accessible across all devices</div>
+          </div>
+        </article>
+
+        <!-- ─── Card 4: Nginx ─── -->
+        <article class="proj-card reveal" style="--delay:240ms">
+          <div class="proj-icon-wrap color-nginx"><i class="fas fa-globe"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Nginx</span>
+              <span class="ptag">HTML/CSS</span>
+              <span class="ptag">JS</span>
+              <span class="ptag">Web</span>
+            </div>
+            <h3 class="proj-title">Personal Website on Nginx</h3>
+            <p class="proj-desc">Configured Nginx to host a local website from the home server. Managed server blocks, resolved port conflicts with other running services, and made the site accessible across the local network. This portfolio is hosted this way.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon a-browser"><i class="fas fa-laptop"></i></div>
+                  <span>Browser</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-lan"><i class="fas fa-network-wired"></i></div>
+                  <span>LAN</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-nginx"><i class="fas fa-server"></i></div>
+                  <span>Nginx</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-html"><i class="fas fa-code"></i></div>
+                  <span>HTML/CSS</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-files"><i class="fas fa-file-code"></i></div>
+                  <span>/var/www</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Hosted on local Nginx server</div>
+          </div>
+        </article>
+
+        <!-- ─── Card 5: Telegram Bot ─── -->
+        <article class="proj-card reveal proj-card-wide" style="--delay:320ms">
+          <div class="proj-icon-wrap color-telegram"><i class="fab fa-telegram"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Python</span>
+              <span class="ptag">Telegram API</span>
+              <span class="ptag">SSH</span>
+              <span class="ptag">Bash</span>
+              <span class="ptag">AI</span>
+            </div>
+            <h3 class="proj-title">Telegram Remote Server Bot</h3>
+            <p class="proj-desc">Built a Telegram bot to control and monitor a Linux server remotely from a mobile device — no manual SSH needed. Supports command execution, file retrieval via SCP, and live system monitoring. Commands are whitelisted and access is restricted by user ID for security. An AI layer (PicoClaw + OpenRouter) interprets natural language into safe script execution.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram arch-diagram-wide">
+                <div class="arch-node">
+                  <div class="arch-icon a-phone"><i class="fas fa-mobile-alt"></i></div>
+                  <span>Mobile</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-tg"><i class="fab fa-telegram"></i></div>
+                  <span>Telegram</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-ai"><i class="fas fa-robot"></i></div>
+                  <span>Bot + AI</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-script"><i class="fas fa-scroll"></i></div>
+                  <span>Scripts</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-sshkey"><i class="fas fa-key"></i></div>
+                  <span>SSH</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-srv"><i class="fas fa-server"></i></div>
+                  <span>Server</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Running on home server</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="sec-tag">~/skills</span>
+        <h2 class="sec-title">My Toolkit</h2>
+        <p class="sec-sub">Learned hands-on, not from slides.</p>
+      </div>
+      <div class="skills-layout">
+        <div class="skill-bars reveal">
+          <h3 class="skills-heading">Proficiency</h3>
+          <div class="bars">
+            <div class="bar-row">
+              <div class="bar-info"><span><i class="fab fa-linux"></i> Linux</span><span class="bar-num">85%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span><i class="fas fa-terminal"></i> SSH &amp; CLI</span><span class="bar-num">80%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span><i class="fas fa-server"></i> Nginx</span><span class="bar-num">78%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="78"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span><i class="fas fa-network-wired"></i> Networking</span><span class="bar-num">72%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="72"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span><i class="fas fa-folder-open"></i> Samba / SMB</span><span class="bar-num">70%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-info"><span><i class="fas fa-magnifying-glass"></i> Problem Solving</span><span class="bar-num">88%</span></div>
+              <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-icons reveal">
+          <h3 class="skills-heading">Technologies</h3>
+          <div class="icons-grid">
+            <div class="sic"><div class="sic-icon c-linux"><i class="fab fa-linux"></i></div><span>Linux</span></div>
+            <div class="sic"><div class="sic-icon c-bash"><i class="fas fa-terminal"></i></div><span>Bash / CLI</span></div>
+            <div class="sic"><div class="sic-icon c-nginx"><i class="fas fa-server"></i></div><span>Nginx</span></div>
+            <div class="sic"><div class="sic-icon c-ssh"><i class="fas fa-key"></i></div><span>SSH</span></div>
+            <div class="sic"><div class="sic-icon c-pihole"><i class="fas fa-shield-halved"></i></div><span>Pi-hole</span></div>
+            <div class="sic"><div class="sic-icon c-samba"><i class="fas fa-folder-open"></i></div><span>Samba</span></div>
+            <div class="sic"><div class="sic-icon c-net"><i class="fas fa-network-wired"></i></div><span>Networking</span></div>
+            <div class="sic"><div class="sic-icon c-dns"><i class="fas fa-sitemap"></i></div><span>DNS / DHCP</span></div>
+            <div class="sic"><div class="sic-icon c-web"><i class="fas fa-code"></i></div><span>HTML / CSS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="sec-tag">~/contact</span>
+        <h2 class="sec-title">Get in Touch</h2>
+        <p class="sec-sub">Have a project idea or question? Feel free to reach out.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <a href="mailto:navaneethnavaneeth769@gmail.com" class="contact-card">
+            <div class="cc-icon cc-email"><i class="fas fa-envelope"></i></div>
+            <div class="cc-text">
+              <strong>Email</strong>
+              <span>navaneethnavaneeth769@gmail.com</span>
+            </div>
+            <i class="fas fa-arrow-right cc-arrow"></i>
+          </a>
+          <a href="tel:+917695996284" class="contact-card">
+            <div class="cc-icon cc-phone"><i class="fas fa-phone"></i></div>
+            <div class="cc-text">
+              <strong>Phone</strong>
+              <span>+91 7695 996 284</span>
+            </div>
+            <i class="fas fa-arrow-right cc-arrow"></i>
+          </a>
+          <p class="contact-note">
+            <i class="fas fa-circle-info"></i>
+            I typically respond within 24&#8211;48 hours.
+          </p>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row-2">
+            <div class="fgroup">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="fgroup">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="fgroup">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="fgroup">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+          <p class="form-feedback" id="form-feedback" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo"><span class="prompt-char">~/</span>navaneeth</span>
+        <p class="footer-tag">Building real systems, not just learning theory.</p>
+        <p class="footer-copy"><span class="prompt-sm">$</span> Hosted on Nginx &nbsp;&middot;&nbsp; &copy; 2025 Navaneeth</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
