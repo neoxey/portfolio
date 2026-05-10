@@ -182,7 +182,22 @@ const qsa = (sel, ctx = document) => ctx.querySelectorAll(sel);
   setTimeout(tick, 700);
 })();
 
-/* ── 10. Contact Form — Formspree ─────────────────────────── */
+/* ── 10. Mouse Tracking Glow Effect ─────────────────────────── */
+(function initGlow() {
+  const cards = qsa('.glow-card');
+  if (!cards.length) return;
+  document.addEventListener('mousemove', e => {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+})();
+
+/* ── 11. Contact Form — Formspree ─────────────────────────── */
 (function initContactForm() {
   const form     = qs('#contact-form');
   const feedback = qs('#form-feedback');
