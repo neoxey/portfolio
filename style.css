@@ -48,7 +48,7 @@ html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
 body {
   font-family: 'Outfit', sans-serif;
   background: var(--bg); color: var(--text);
-  line-height: 1.7; overflow-x: hidden;
+  line-height: 1.9; overflow-x: hidden;
   transition: background var(--ease), color var(--ease);
 }
 ul { list-style: none; }
@@ -100,7 +100,7 @@ input, textarea { font-family: inherit; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Hero ───────────────────────────────────────────────────── */
-.hero { min-height: 100vh; padding: var(--nav-h) 24px 80px; display: flex; align-items: center; justify-content: center; position: relative; max-width: 1080px; margin: 0 auto; gap: 40px; }
+.hero { min-height: 0vh; padding: var(--nav-h) 24px 80px; display: flex; align-items: center; justify-content: center; position: relative; max-width: 1080px; margin: 0 auto; gap: 40px; }
 .hero-grid-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 52px 52px; }
 .term-window { flex: 0 0 360px; background: var(--surface); border: 1px solid var(--border-mid); border-radius: var(--radius); overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.4); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; animation: fadeInRight 0.7s ease 0.3s both; min-height: 180px; }
 .term-bar { background: var(--bg3); padding: 10px 14px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--border); }

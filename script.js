@@ -134,7 +134,7 @@ const qsa = (sel, ctx = document) => ctx.querySelectorAll(sel);
     { type: 'cmd',       text: 'cat role.txt' },
     { type: 'out',       text: 'Student · Linux · System Builder' },
     { type: 'cmd',       text: 'systemctl status learning' },
-    { type: 'out-green', text: '● Active: running (3 years)' },
+    { type: 'out-green', text: '● Active: running (4 years)' },
     { type: 'cmd',       text: 'ls projects/' },
     { type: 'out',       text: 'home-server  pi-hole  samba  nginx  tg-bot' },
   ];
