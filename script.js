@@ -111,12 +111,13 @@ const qsa = (sel, ctx = document) => ctx.querySelectorAll(sel);
       const el  = e.target;
       const max = parseInt(el.dataset.target) || 0;
       let n = 0;
-      const inc  = Math.ceil(max / 30);
+      const steps = 40;
+      const inc  = Math.ceil(max / steps);
       const tick = setInterval(() => {
         n = Math.min(n + inc, max);
         el.textContent = n;
         if (n >= max) clearInterval(tick);
-      }, 48);
+      }, max > 100 ? 30 : 48);
       obs.unobserve(el);
     });
   }, { threshold: 0.6 });

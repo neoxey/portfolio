@@ -108,11 +108,11 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p class="about-lead">Hi, I'm Navaneeth — a student builder whose ultimate dream is to become an <strong>Ethical Hacker</strong> and <strong>SOC Analyst</strong>.</p>
-          <p>I focus on learning systems and security by building real projects. Resourcefully, I repurposed an old Acer Tamil Nadu Government school-issued laptop into a dedicated headless Linux home server node, utilising its internal battery as a built-in UPS. I have hands-on experience setting up secure Linux nodes, establishing key-based remote SSH access, deploying a Pi-hole DNS sinkhole to intercept trackers, and routing local services via Nginx proxy paths.</p>
-          <p>I know HTML, CSS, JavaScript, and basic Python. I am highly comfortable working in the command-line CLI, debugging service failures, analyzing logs, and implementing security best practices to protect home server environments.</p>
+          <p>I don't just study security; I treat my infrastructure as a sandbox for defense. I've turned a standard Acer laptop into a hardened, headless Linux home server, managing everything from network-wide ad-blocking with Pi-hole to automated remote control via an AI-integrated Telegram bot.</p>
+          <p>My 1,000+ hours of hands-on experience aren't just about making things work — they are about understanding the threat surface. I analyze system logs, trace network anomalies, and practice server hardening to ensure my infrastructure is as secure as it is functional. Currently, I am applying these skills to develop <strong>PicoClaw</strong>, an AI-powered server control system designed to bridge automation and secure access.</p>
           <div class="about-stats">
             <div class="astat">
-              <span class="astat-num" data-target="5">0</span>
+              <span class="astat-num" data-target="6">0</span>
               <span class="astat-label">Projects Built</span>
             </div>
             <div class="astat">
@@ -120,8 +120,12 @@
               <span class="astat-label">Years Learning</span>
             </div>
             <div class="astat">
-              <span class="astat-num" data-target="6">0</span>
+              <span class="astat-num" data-target="13">0</span>
               <span class="astat-label">Technologies</span>
+            </div>
+            <div class="astat">
+              <span class="astat-num astat-big" data-target="1000">0</span>
+              <span class="astat-label">Hrs Hands-On</span>
             </div>
           </div>
         </div>
@@ -358,6 +362,16 @@
               </div>
             </div>
 
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--accent);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> Key-based SSH auth eliminates password brute-force vectors</li>
+                <li><i class="fas fa-check-circle"></i> UFW ruleset enforces least-privilege inbound traffic policy</li>
+                <li><i class="fas fa-check-circle"></i> Systemd hardening limits service privilege escalation paths</li>
+              </ul>
+            </div>
+
             <div class="proj-status"><span class="status-dot pulse"></span>Live on home network</div>
           </div>
         </article>
@@ -404,6 +418,16 @@
                   <span>Internet</span>
                 </div>
               </div>
+            </div>
+
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--c-pihole);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> Blocks 31% of all DNS queries — stops trackers & malicious domains at the network layer</li>
+                <li><i class="fas fa-check-circle"></i> DNS query logs provide full visibility into device-level traffic for anomaly detection</li>
+                <li><i class="fas fa-check-circle"></i> Eliminates C2 callback domains before they reach any device on the LAN</li>
+              </ul>
             </div>
 
             <div class="proj-status"><span class="status-dot pulse"></span>Blocking ads network-wide</div>
@@ -454,6 +478,16 @@
               </div>
             </div>
 
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--c-samba);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> User-isolated share permissions prevent unauthorized cross-account data access</li>
+                <li><i class="fas fa-check-circle"></i> LAN-only exposure eliminates remote attack surface for the file server</li>
+                <li><i class="fas fa-check-circle"></i> Credential debugging process built understanding of SMB authentication flaws</li>
+              </ul>
+            </div>
+
             <div class="proj-status"><span class="status-dot pulse"></span>Accessible across all devices</div>
           </div>
         </article>
@@ -502,12 +536,22 @@
               </div>
             </div>
 
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--c-nginx);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> Reverse proxy architecture hides backend service topology from clients</li>
+                <li><i class="fas fa-check-circle"></i> Server block isolation ensures services cannot bleed into each other's scope</li>
+                <li><i class="fas fa-check-circle"></i> Port conflict resolution built hands-on understanding of service exposure risks</li>
+              </ul>
+            </div>
+
             <div class="proj-status"><span class="status-dot pulse"></span>Hosted on local Nginx server</div>
           </div>
         </article>
 
         <!-- ─── Card 5: Telegram Bot ─── -->
-        <article class="proj-card glow-card reveal proj-card-wide" style="--delay:320ms">
+        <article class="proj-card glow-card reveal" style="--delay:320ms">
           <div class="proj-icon-wrap color-telegram"><i class="fab fa-telegram"></i></div>
           <div class="proj-body">
             <div class="proj-tags">
@@ -523,7 +567,7 @@
             <!-- Architecture Diagram -->
             <div class="arch-block">
               <p class="arch-label">Architecture</p>
-              <div class="arch-diagram arch-diagram-wide">
+              <div class="arch-diagram">
                 <div class="arch-node">
                   <div class="arch-icon a-phone"><i class="fas fa-mobile-alt"></i></div>
                   <span>Mobile</span>
@@ -556,13 +600,86 @@
               </div>
             </div>
 
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--c-telegram);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> User-ID whitelist enforces strict access control — zero trust for unknown callers</li>
+                <li><i class="fas fa-check-circle"></i> AI command parser validates intent before any shell execution occurs</li>
+                <li><i class="fas fa-check-circle"></i> Removes direct SSH exposure while maintaining full remote admin capability</li>
+              </ul>
+            </div>
+
             <div class="proj-status"><span class="status-dot pulse"></span>Running on home server</div>
           </div>
         </article>
 
+        <!-- ─── Card 6: AI CCTV Surveillance Prototype ─── -->
+        <article class="proj-card glow-card reveal" style="--delay:400ms">
+          <div class="proj-icon-wrap color-cctv"><i class="fas fa-video"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Ubuntu</span>
+              <span class="ptag">Docker</span>
+              <span class="ptag">RTSP</span>
+              <span class="ptag">ONVIF</span>
+              <span class="ptag">FFmpeg</span>
+              <span class="ptag">AI</span>
+            </div>
+            <h3 class="proj-title">AI CCTV Surveillance Prototype</h3>
+            <p class="proj-desc">Explored integrating a Hikvision DVR with AI-based monitoring using RTSP streaming, ONVIF, Docker, and Frigate. Validated the full architecture, ran FFmpeg stream diagnostics, and documented an upgrade path. Full AI deployment was limited by DVR stream corruption and hardware constraints.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram arch-diagram-wide">
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#ef4444;"><i class="fas fa-camera"></i></div>
+                  <span>Cameras</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#f59e0b;"><i class="fas fa-hdd"></i></div>
+                  <span>DVR</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#a855f7;"><i class="fas fa-video"></i></div>
+                  <span>RTSP</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-linux"><i class="fab fa-linux"></i></div>
+                  <span>Ubuntu</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#0ea5e9;"><i class="fab fa-docker"></i></div>
+                  <span>Docker</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-ai"><i class="fas fa-robot"></i></div>
+                  <span>Frigate AI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:#ef4444;"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> ONVIF auth configuration revealed real-world IP camera credential exposure risks</li>
+                <li><i class="fas fa-check-circle"></i> RTSP stream analysis built deep understanding of unsecured video protocol surfaces</li>
+                <li><i class="fas fa-check-circle"></i> Docker-isolated Frigate deployment limits AI component blast radius on the host</li>
+              </ul>
+            </div>
+
+            <div class="proj-status" style="color:var(--c-samba);"><span class="status-dot" style="background:var(--c-samba); box-shadow:0 0 8px rgba(245,158,11,0.5);"></span>Prototype — limited by DVR stream compatibility</div>
+          </div>
+        </article>
+
       </div>
-      
-      <!-- Dynamic GitHub Repos Grid -->
       <div class="projects-grid" id="github-projects" style="display: none;">
         <!-- Injected dynamically by script.js -->
       </div>
@@ -612,18 +729,19 @@
         <div class="skill-icons reveal">
           <h3 class="skills-heading">Technologies</h3>
           <div class="icons-grid">
-            <div class="sic"><div class="sic-icon c-linux"><i class="fab fa-linux"></i></div><span>Linux</span></div>
-            <div class="sic"><div class="sic-icon c-bash"><i class="fas fa-terminal"></i></div><span>Bash / CLI</span></div>
-            <div class="sic"><div class="sic-icon c-nginx"><i class="fas fa-server"></i></div><span>Nginx</span></div>
-            <div class="sic"><div class="sic-icon c-ssh"><i class="fas fa-key"></i></div><span>SSH</span></div>
-            <div class="sic"><div class="sic-icon c-pihole"><i class="fas fa-shield-halved"></i></div><span>Pi-hole</span></div>
-            <div class="sic"><div class="sic-icon c-samba"><i class="fas fa-folder-open"></i></div><span>Samba</span></div>
-            <div class="sic"><div class="sic-icon c-net"><i class="fas fa-network-wired"></i></div><span>Networking</span></div>
-            <div class="sic"><div class="sic-icon c-dns"><i class="fas fa-sitemap"></i></div><span>DNS / DHCP</span></div>
-            <div class="sic"><div class="sic-icon c-web"><i class="fas fa-code"></i></div><span>HTML / CSS</span></div>
-            <div class="sic"><div class="sic-icon c-js"><i class="fab fa-js"></i></div><span>JavaScript</span></div>
-            <div class="sic"><div class="sic-icon c-python"><i class="fab fa-python"></i></div><span>Python (Basic)</span></div>
-            <div class="sic"><div class="sic-icon c-cyber"><i class="fas fa-user-shield"></i></div><span>Cyber Security</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#f97316;"><i class="fab fa-linux"></i></div><span>Linux</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#22d3ee;"><i class="fas fa-terminal"></i></div><span>Bash / CLI</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#10b981;"><i class="fas fa-server"></i></div><span>Nginx</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#00f2c3;"><i class="fas fa-key"></i></div><span>SSH</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#a855f7;"><i class="fas fa-shield-halved"></i></div><span>Pi-hole</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#f59e0b;"><i class="fas fa-folder-open"></i></div><span>Samba</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#3b82f6;"><i class="fas fa-network-wired"></i></div><span>Networking</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#06b6d4;"><i class="fas fa-sitemap"></i></div><span>DNS / DHCP</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#e34c26;"><i class="fas fa-code"></i></div><span>HTML / CSS</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#f1e05a;"><i class="fab fa-js"></i></div><span>JavaScript</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#3572a5;"><i class="fab fa-python"></i></div><span>Python (Basic)</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#ef4444;"><i class="fas fa-user-shield"></i></div><span>Cyber Security</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#e879f9;"><i class="fas fa-video"></i></div><span>RTSP</span></div>
           </div>
         </div>
       </div>
@@ -870,7 +988,11 @@
             </div>
             <div>
               <span class="print-skill-category">Applications</span>
-              <p class="print-skill-desc">Nginx (Proxy), Pi-hole, Samba (SMB)</p>
+              <p class="print-skill-desc">Nginx (Proxy), Pi-hole, Samba (SMB), Docker, FFmpeg</p>
+            </div>
+            <div>
+              <span class="print-skill-category">Protocols &amp; Streaming</span>
+              <p class="print-skill-desc">RTSP, ONVIF, SMB/CIFS, DNS, DHCP, SSH</p>
             </div>
             <div>
               <span class="print-skill-category">Programming</span>
@@ -981,6 +1103,16 @@
             </div>
             <p class="print-project-desc">
               Configured a high-performance web gateway to route local web services. Engineered virtual server blocks, managed reverse proxy paths to isolate containers, and resolved standard HTTP port conflicts to secure external local requests.
+            </p>
+          </div>
+
+          <div class="print-project">
+            <div class="print-project-header">
+              <span class="print-project-title">AI CCTV Surveillance Prototype</span>
+              <span class="print-project-tech">Ubuntu, Docker, RTSP, ONVIF, FFmpeg, Frigate</span>
+            </div>
+            <p class="print-project-desc">
+              Explored integrating a Hikvision DVR with AI-based monitoring using RTSP streaming, ONVIF, Docker, and Frigate AI on Ubuntu Server. Validated the full camera-to-AI architecture, ran FFmpeg stream diagnostics, configured ONVIF authentication, and documented an upgrade path. Full AI deployment was limited by DVR stream corruption and hardware constraints.
             </p>
           </div>
         </section>
