@@ -16,12 +16,21 @@
 </head>
 <body>
 
+  <!-- Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
   <!-- Premium Animated Background -->
   <div class="bg-orbs">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
   </div>
+
+  <!-- Particle Network Canvas -->
+  <canvas class="particle-canvas" id="particle-canvas" aria-hidden="true"></canvas>
 
   <!-- ═══════════════════════════════════
        NAVBAR
@@ -54,6 +63,7 @@
        HERO
   ═══════════════════════════════════ -->
   <section class="hero" id="home">
+    <div class="hero-spotlight" id="hero-spotlight"></div>
     <div class="hero-grid-bg"></div>
 
     <div class="term-window">
@@ -697,32 +707,68 @@
         <p class="sec-sub">Learned hands-on, not from slides.</p>
       </div>
       <div class="skills-layout">
-        <div class="skill-bars reveal">
+        <div class="skill-rings reveal">
           <h3 class="skills-heading">Proficiency</h3>
-          <div class="bars">
-            <div class="bar-row">
-              <div class="bar-info"><span><i class="fas fa-code"></i> HTML / CSS / JS</span><span class="bar-num">88%</span></div>
-              <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
+          <div class="rings-grid">
+            <div class="ring-item" data-value="88" data-color="#00f2c3">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="88"/>
+                </svg>
+                <span class="ring-pct">88%</span>
+              </div>
+              <div class="ring-label"><i class="fas fa-code"></i> HTML/CSS/JS</div>
             </div>
-            <div class="bar-row">
-              <div class="bar-info"><span><i class="fab fa-linux"></i> Linux &amp; CLI</span><span class="bar-num">85%</span></div>
-              <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+            <div class="ring-item" data-value="85" data-color="#f97316">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="85" style="--ring-color:#f97316"/>
+                </svg>
+                <span class="ring-pct" style="color:#f97316">85%</span>
+              </div>
+              <div class="ring-label"><i class="fab fa-linux"></i> Linux &amp; CLI</div>
             </div>
-            <div class="bar-row">
-              <div class="bar-info"><span><i class="fas fa-terminal"></i> SSH &amp; Networks</span><span class="bar-num">80%</span></div>
-              <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+            <div class="ring-item" data-value="80" data-color="#0ea5e9">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="80" style="--ring-color:#0ea5e9"/>
+                </svg>
+                <span class="ring-pct" style="color:#0ea5e9">80%</span>
+              </div>
+              <div class="ring-label"><i class="fas fa-terminal"></i> SSH &amp; Networks</div>
             </div>
-            <div class="bar-row">
-              <div class="bar-info"><span><i class="fas fa-server"></i> Nginx Web Server</span><span class="bar-num">78%</span></div>
-              <div class="bar-track"><div class="bar-fill" data-width="78"></div></div>
+            <div class="ring-item" data-value="78" data-color="#10b981">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="78" style="--ring-color:#10b981"/>
+                </svg>
+                <span class="ring-pct" style="color:#10b981">78%</span>
+              </div>
+              <div class="ring-label"><i class="fas fa-server"></i> Nginx Server</div>
             </div>
-            <div class="bar-row">
-              <div class="bar-info"><span><i class="fas fa-folder-open"></i> Samba Sharing</span><span class="bar-num">70%</span></div>
-              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+            <div class="ring-item" data-value="70" data-color="#f59e0b">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="70" style="--ring-color:#f59e0b"/>
+                </svg>
+                <span class="ring-pct" style="color:#f59e0b">70%</span>
+              </div>
+              <div class="ring-label"><i class="fas fa-folder-open"></i> Samba Sharing</div>
             </div>
-            <div class="bar-row">
-              <div class="bar-info"><span><i class="fab fa-python"></i> Python (Basic)</span><span class="bar-num">40%</span></div>
-              <div class="bar-track"><div class="bar-fill" data-width="40"></div></div>
+            <div class="ring-item" data-value="40" data-color="#a855f7">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="40" style="--ring-color:#a855f7"/>
+                </svg>
+                <span class="ring-pct" style="color:#a855f7">40%</span>
+              </div>
+              <div class="ring-label"><i class="fab fa-python"></i> Python</div>
             </div>
           </div>
         </div>
