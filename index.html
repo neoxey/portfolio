@@ -327,6 +327,68 @@
         <button class="filter-btn" data-filter="github">GitHub Repositories</button>
       </div>
       <div class="projects-grid" id="featured-projects">
+        <!-- ─── GatePulse: Smart Gate Light ─── -->
+        <article class="proj-card glow-card reveal" style="--delay:0ms">
+          <div class="proj-icon-wrap color-server"><i class="fas fa-lightbulb"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">IoT</span>
+              <span class="ptag">Android</span>
+              <span class="ptag">MQTT</span>
+              <span class="ptag">Home Assistant</span>
+              <span class="ptag">ESP8266</span>
+            </div>
+            <h3 class="proj-title">GatePulse — Smart Gate Light</h3>
+            <p class="proj-desc">A local Wi-Fi based smart gate-light automation system that combines an Android application, event-driven RSSI detection, MQTT, Raspberry Pi, Home Assistant and ESP8266 to automate a gate light.</p>
+
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram arch-diagram-wide">
+                <div class="arch-node">
+                  <div class="arch-icon a-phone"><i class="fas fa-mobile-alt"></i></div>
+                  <span>Android</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-lan"><i class="fas fa-wifi"></i></div>
+                  <span>Wi-Fi / RSSI</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-network"><i class="fas fa-diagram-project"></i></div>
+                  <span>MQTT</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-linux"><i class="fab fa-raspberry-pi"></i></div>
+                  <span>Pi / Home Assistant</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-systemd"><i class="fas fa-microchip"></i></div>
+                  <span>ESP8266 / Relay</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-fw"><i class="fas fa-lightbulb"></i></div>
+                  <span>Gate Light</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--accent);"><i class="fas fa-bolt" style="margin-right:6px;"></i>Event-driven design</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> Wi-Fi reconnect triggers one RSSI measurement and one MQTT report—not continuous scanning</li>
+                <li><i class="fas fa-check-circle"></i> Home Assistant evaluates RSSI and time conditions, then owns the three-minute light timer</li>
+                <li><i class="fas fa-check-circle"></i> ESPHome on an ESP8266 controls the relay while retaining physical push-button and wall-switch input</li>
+              </ul>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Local IoT automation project</div>
+          </div>
+        </article>
+
 
         <!-- ─── Card 1: Home Server ─── -->
         <article class="proj-card glow-card reveal" style="--delay:0ms">
