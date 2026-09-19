@@ -41,7 +41,6 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#home"      class="nav-link">Home</a></li>
         <li><a href="#about"     class="nav-link">About</a></li>
-        <li><a href="#telemetry" class="nav-link">Telemetry</a></li>
         <li><a href="#projects"  class="nav-link">Projects</a></li>
         <li><a href="#skills"    class="nav-link">Skills</a></li>
         <li><a href="#journey"   class="nav-link">Journey</a></li>
@@ -117,9 +116,9 @@
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p class="about-lead">Hi, I'm Navaneeth — a student builder whose ultimate dream is to become an <strong>Ethical Hacker</strong> and <strong>SOC Analyst</strong>.</p>
-          <p>I don't just study security; I treat my infrastructure as a sandbox for defense. I've turned a standard Acer laptop into a hardened, headless Linux home server, managing everything from network-wide ad-blocking with Pi-hole to automated remote control via an AI-integrated Telegram bot.</p>
-          <p>My 1,000+ hours of hands-on experience aren't just about making things work — they are about understanding the threat surface. I analyze system logs, trace network anomalies, and practice server hardening to ensure my infrastructure is as secure as it is functional. Currently, I am applying these skills to develop <strong>PicoClaw</strong>, an AI-powered server control system designed to bridge automation and secure access.</p>
+          <p class="about-lead">Hi, I'm Navaneeth — a Class 12 CS Maths student, practical builder, and aspiring <strong>Ethical Hacker</strong> and <strong>SOC Analyst</strong>.</p>
+          <p>I learn cybersecurity, Linux and networking by building real systems: from home-server services to Raspberry Pi and IoT home-automation projects.</p>
+          <p>My current focus is learning through practical work with Linux, networking, Raspberry Pi, Android and local automation—understanding how systems connect, behave and can be secured.</p>
           <div class="about-stats">
             <div class="astat">
               <span class="astat-num" data-target="6">0</span>
@@ -204,113 +203,7 @@
   <!-- ═══════════════════════════════════
        TELEMETRY DASHBOARD
   ═══════════════════════════════════ -->
-  <section class="telemetry section" id="telemetry">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="sec-tag">~/telemetry</span>
-        <h2 class="sec-title">Server Telemetry</h2>
-        <p class="sec-sub">Live simulated performance of my personal home lab nodes.</p>
-      </div>
-
-      <div class="telemetry-grid">
-        <!-- Node 1: Ubuntu Host -->
-        <div class="tel-card glow-card reveal">
-          <div class="tel-header">
-            <span class="status-dot pulse"></span>
-            <span class="tel-node-title"><i class="fab fa-linux"></i> ubuntu-homeserver</span>
-          </div>
-          <div class="tel-metrics">
-            <div class="tel-metric">
-              <span class="tel-label">CPU Usage</span>
-              <div class="tel-gauge-wrap">
-                <div class="tel-gauge-bar" id="cpu-bar" style="width: 42%;"></div>
-              </div>
-              <span class="tel-value" id="cpu-val">42%</span>
-            </div>
-            <div class="tel-metric">
-              <span class="tel-label">RAM Usage</span>
-              <div class="tel-gauge-wrap">
-                <div class="tel-gauge-bar" id="ram-bar" style="width: 72%;"></div>
-              </div>
-              <span class="tel-value" id="ram-val">72%</span>
-            </div>
-            <div class="tel-metric">
-              <span class="tel-label">256GB SSD</span>
-              <div class="tel-gauge-wrap">
-                <div class="tel-gauge-bar" style="width: 41%; background: var(--accent-secondary);"></div>
-              </div>
-              <span class="tel-value">41%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Node 2: DNS Sinkhole (Pi-hole) -->
-        <div class="tel-card glow-card reveal">
-          <div class="tel-header">
-            <span class="status-dot pulse" style="background:#a855f7; box-shadow: 0 0 8px rgba(168,85,247,0.5);"></span>
-            <span class="tel-node-title"><i class="fas fa-shield-halved"></i> pihole-dns</span>
-          </div>
-          <div class="tel-metrics">
-            <div class="tel-mini-grid">
-              <div class="tel-mini-card">
-                <span class="tel-mini-label">Total Queries</span>
-                <span class="tel-mini-val" id="pihole-queries">84,291</span>
-              </div>
-              <div class="tel-mini-card">
-                <span class="tel-mini-label">Blocked Queries</span>
-                <span class="tel-mini-val" id="pihole-blocked" style="color: #ef4444;">26,130</span>
-              </div>
-              <div class="tel-mini-card">
-                <span class="tel-mini-label">Block Percentage</span>
-                <span class="tel-mini-val" id="pihole-percent" style="color: var(--accent);">31.0%</span>
-              </div>
-              <div class="tel-mini-card">
-                <span class="tel-mini-label">Domains Blocked</span>
-                <span class="tel-mini-val">2.49M</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Node 3: Samba Storage & Nginx Network -->
-        <div class="tel-card glow-card reveal tel-wide">
-          <div class="tel-header">
-            <span class="status-dot pulse" style="background:#10b981; box-shadow: 0 0 8px rgba(16,185,129,0.5);"></span>
-            <span class="tel-node-title"><i class="fas fa-network-wired"></i> Services Status &amp; Traffic</span>
-          </div>
-          <div class="tel-services-list">
-            <div class="tel-service-item">
-              <div class="tel-service-name">
-                <span class="status-dot pulse" style="background:var(--c-nginx);"></span>
-                <span>Nginx Reverse Proxy</span>
-              </div>
-              <span class="tel-service-stats" id="nginx-status">Active (84 req/min)</span>
-            </div>
-            <div class="tel-service-item">
-              <div class="tel-service-name">
-                <span class="status-dot pulse" style="background:var(--c-samba);"></span>
-                <span>Samba SMB Sharing</span>
-              </div>
-              <span class="tel-service-stats" id="samba-status">Active (3 clients connected)</span>
-            </div>
-            <div class="tel-service-item">
-              <div class="tel-service-name">
-                <span class="status-dot pulse" style="background:var(--c-telegram);"></span>
-                <span>Telegram SSH Bot</span>
-              </div>
-              <span class="tel-service-stats" id="tg-status">Active &amp; Listening</span>
-            </div>
-          </div>
-          
-          <!-- Live traffic simulator canvas -->
-          <div class="canvas-wrap">
-            <p class="canvas-label">Active DNS &amp; Proxy Queries Blocked Real-Time</p>
-            <canvas id="telemetry-chart"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- ═══════════════════════════════════
        PROJECTS
@@ -339,7 +232,7 @@
               <span class="ptag">ESP8266</span>
             </div>
             <h3 class="proj-title">GatePulse — Smart Gate Light</h3>
-            <p class="proj-desc">A local Wi-Fi based smart gate-light automation system that combines an Android application, event-driven RSSI detection, MQTT, Raspberry Pi, Home Assistant and ESP8266 to automate a gate light.</p>
+            <p class="proj-desc">Smart gate-light automation system using Raspberry Pi, Home Assistant, ESP8266, ESPHome, MQTT and Wi-Fi signal detection.</p>
 
             <div class="arch-block">
               <p class="arch-label">Architecture</p>
@@ -506,121 +399,9 @@
           </div>
         </article>
 
-        <!-- ─── Card 3: Samba ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:160ms">
-          <div class="proj-icon-wrap color-samba"><i class="fas fa-folder-open"></i></div>
-          <div class="proj-body">
-            <div class="proj-tags">
-              <span class="ptag">Samba</span>
-              <span class="ptag">SMB</span>
-              <span class="ptag">Linux</span>
-              <span class="ptag">Auth</span>
-            </div>
-            <h3 class="proj-title">Samba File Sharing System</h3>
-            <p class="proj-desc">Set up a Samba file server on Linux to share directories across Windows and Linux machines. Configured user authentication and share permissions, and debugged common SMB access and credential issues from scratch.</p>
+        
 
-            <!-- Architecture Diagram -->
-            <div class="arch-block">
-              <p class="arch-label">Architecture</p>
-              <div class="arch-diagram">
-                <div class="arch-node">
-                  <div class="arch-icon a-win"><i class="fab fa-windows"></i></div>
-                  <span>Windows</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-smb"><i class="fas fa-network-wired"></i></div>
-                  <span>SMB/LAN</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-samba"><i class="fas fa-folder-open"></i></div>
-                  <span>Samba</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-auth"><i class="fas fa-user-lock"></i></div>
-                  <span>Auth</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-disk"><i class="fas fa-hard-drive"></i></div>
-                  <span>Storage</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Security Outcome -->
-            <div class="proj-outcome">
-              <p class="arch-label" style="color:var(--c-samba);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
-              <ul class="outcome-list">
-                <li><i class="fas fa-check-circle"></i> User-isolated share permissions prevent unauthorized cross-account data access</li>
-                <li><i class="fas fa-check-circle"></i> LAN-only exposure eliminates remote attack surface for the file server</li>
-                <li><i class="fas fa-check-circle"></i> Credential debugging process built understanding of SMB authentication flaws</li>
-              </ul>
-            </div>
-
-            <div class="proj-status"><span class="status-dot pulse"></span>Accessible across all devices</div>
-          </div>
-        </article>
-
-        <!-- ─── Card 4: Nginx ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:240ms">
-          <div class="proj-icon-wrap color-nginx"><i class="fas fa-globe"></i></div>
-          <div class="proj-body">
-            <div class="proj-tags">
-              <span class="ptag">Nginx</span>
-              <span class="ptag">HTML/CSS</span>
-              <span class="ptag">JS</span>
-              <span class="ptag">Web</span>
-            </div>
-            <h3 class="proj-title">Personal Website on Nginx</h3>
-            <p class="proj-desc">Configured Nginx to host a local website from the home server. Managed server blocks, resolved port conflicts with other running services, and made the site accessible across the local network. This portfolio is hosted this way.</p>
-
-            <!-- Architecture Diagram -->
-            <div class="arch-block">
-              <p class="arch-label">Architecture</p>
-              <div class="arch-diagram">
-                <div class="arch-node">
-                  <div class="arch-icon a-browser"><i class="fas fa-laptop"></i></div>
-                  <span>Browser</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-lan"><i class="fas fa-network-wired"></i></div>
-                  <span>LAN</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-nginx"><i class="fas fa-server"></i></div>
-                  <span>Nginx</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-html"><i class="fas fa-code"></i></div>
-                  <span>HTML/CSS</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-files"><i class="fas fa-file-code"></i></div>
-                  <span>/var/www</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Security Outcome -->
-            <div class="proj-outcome">
-              <p class="arch-label" style="color:var(--c-nginx);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
-              <ul class="outcome-list">
-                <li><i class="fas fa-check-circle"></i> Reverse proxy architecture hides backend service topology from clients</li>
-                <li><i class="fas fa-check-circle"></i> Server block isolation ensures services cannot bleed into each other's scope</li>
-                <li><i class="fas fa-check-circle"></i> Port conflict resolution built hands-on understanding of service exposure risks</li>
-              </ul>
-            </div>
-
-            <div class="proj-status"><span class="status-dot pulse"></span>Hosted on local Nginx server</div>
-          </div>
-        </article>
+        
 
         <!-- ─── Card 5: Telegram Bot ─── -->
         <article class="proj-card glow-card reveal" style="--delay:320ms">
@@ -849,6 +630,14 @@
             <div class="sic"><div class="sic-icon" style="color:#f1e05a;"><i class="fab fa-js"></i></div><span>JavaScript</span></div>
             <div class="sic"><div class="sic-icon" style="color:#3572a5;"><i class="fab fa-python"></i></div><span>Python (Basic)</span></div>
             <div class="sic"><div class="sic-icon" style="color:#ef4444;"><i class="fas fa-user-shield"></i></div><span>Cyber Security</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#c51a4a;"><i class="fab fa-raspberry-pi"></i></div><span>Raspberry Pi</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#0db7ed;"><i class="fab fa-docker"></i></div><span>Docker</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#7c3aed;"><i class="fas fa-diagram-project"></i></div><span>MQTT</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#22c55e;"><i class="fas fa-microchip"></i></div><span>ESP8266 / ESPHome</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#38bdf8;"><i class="fas fa-house-signal"></i></div><span>Home Assistant</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#00979d;"><i class="fas fa-microchip"></i></div><span>Arduino</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#a4c639;"><i class="fab fa-android"></i></div><span>Android / Kotlin</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#f59e0b;"><i class="fas fa-wifi"></i></div><span>Wi-Fi / RSSI</span></div>
             <div class="sic"><div class="sic-icon" style="color:#e879f9;"><i class="fas fa-video"></i></div><span>RTSP</span></div>
           </div>
         </div>
@@ -908,10 +697,10 @@
           </div>
           <div class="tl-card glow-card">
             <span class="tl-year" style="color:var(--c-pihole);">2024</span>
-            <h3 class="tl-title">Deployed Pi-hole + Samba + Nginx on Homelab</h3>
-            <p class="tl-desc">Expanded the homelab with a Pi-hole DNS sinkhole blocking 31% of all queries, a Samba SMB file server for cross-platform sharing, and Nginx as a reverse proxy for local services.</p>
+            <h3 class="tl-title">Expanded from Linux into Networking and Raspberry Pi</h3>
+            <p class="tl-desc">Built practical networking knowledge through homelab work, then began applying it to Raspberry Pi and local IoT automation projects.</p>
             <div class="tl-tags">
-              <span>Pi-hole</span><span>Samba</span><span>Nginx</span><span>DNS</span>
+              <span>Linux</span><span>Networking</span><span>Raspberry Pi</span><span>IoT</span>
             </div>
           </div>
         </div>
@@ -940,7 +729,7 @@
           <div class="tl-card glow-card tl-card-active">
             <span class="tl-year" style="color:var(--accent);">2026 — Now</span>
             <h3 class="tl-title">Generative AI Mastermind Certificate</h3>
-            <p class="tl-desc">Completed the Generative AI Mastermind course at <strong>Outskill</strong>, deepening knowledge of LLMs, Prompt Engineering, ChatGPT and API integration. Actively building toward a career in <strong>Ethical Hacking &amp; SOC Analysis</strong>.</p>
+            <p class="tl-desc">Completed the Generative AI Mastermind course at <strong>Outskill</strong>, deepening knowledge of LLMs, Prompt Engineering, ChatGPT and API integration. Continuing the path from Linux and networking into IoT, home automation and <strong>Cybersecurity</strong>.</p>
             <div class="tl-tags">
               <span>LLMs</span><span>Prompt Engineering</span><span>ChatGPT</span><span>SOC</span>
             </div>
