@@ -1,0 +1,17 @@
+import './modules/01-theme-toggle.js';
+import './modules/02-sticky-navbar.js';
+import './modules/03-active-nav-link-sliding-pill.js';
+import './modules/04-hamburger-menu-overlay.js';
+import './modules/05-smooth-scroll.js';
+import './modules/06-scroll-reveal.js';
+import './modules/07-svg-radial-progress-rings.js';
+import './modules/08-mouse-tracking-glow-effect.js';
+import './modules/09-3d-card-tilt-effect.js';
+import './modules/10-hero-cursor-spotlight.js';
+import './modules/11-particle-network-canvas.js';
+import './modules/12-stat-counters.js';
+import './modules/13-interactive-terminal-shell.js';
+import './modules/14-contact-form-formspree.js';
+import './modules/15-live-server-telemetry-dashboard-simulation.js';
+import './modules/16-github-repositories-dynamic-fetching.js';
+import './modules/17-interactive-resume-print-trigger.js';
