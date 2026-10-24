@@ -12,9 +12,17 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Three.js for 3D WebGL background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   
 </head>
 <body>
+
+  <!-- 3D WebGL Background Canvas -->
+  <canvas id="three-bg" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor Orb -->
+  <div class="cursor-orb" id="cursor-orb" aria-hidden="true"></div>
 
   <!-- Grain Overlay -->
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -41,6 +49,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#home"      class="nav-link">Home</a></li>
         <li><a href="#about"     class="nav-link">About</a></li>
+        <li><a href="#telemetry" class="nav-link">Telemetry</a></li>
         <li><a href="#projects"  class="nav-link">Projects</a></li>
         <li><a href="#skills"    class="nav-link">Skills</a></li>
         <li><a href="#journey"   class="nav-link">Journey</a></li>
@@ -87,10 +96,10 @@
       <p class="hero-tagline">Building &amp; securing real systems,<br>not just learning theory.</p>
       <p class="hero-stack">
         <span>Linux</span><span class="divider">/</span>
-        <span>Networking</span><span class="divider">/</span>
-        <span>IoT</span><span class="divider">/</span>
-        <span>Android</span><span class="divider">/</span>
-        <span>Cybersecurity</span>
+        <span>SSH</span><span class="divider">/</span>
+        <span>Nginx</span><span class="divider">/</span>
+        <span>Pi-hole</span><span class="divider">/</span>
+        <span>Samba</span>
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
@@ -116,9 +125,9 @@
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p class="about-lead">Hi, I'm Navaneeth — a Class 12 CS Maths student, practical builder, and aspiring <strong>Ethical Hacker</strong> and <strong>SOC Analyst</strong>.</p>
-          <p>I learn cybersecurity, Linux and networking by building real systems: from home-server services to Raspberry Pi and IoT home-automation projects.</p>
-          <p>My current focus is learning through practical work with Linux, networking, Raspberry Pi, Android and local automation—understanding how systems connect, behave and can be secured.</p>
+          <p class="about-lead">Hi, I'm Navaneeth — a student builder whose ultimate dream is to become an <strong>Ethical Hacker</strong> and <strong>SOC Analyst</strong>.</p>
+          <p>I don't just study security; I treat my infrastructure as a sandbox for defense. I've turned a standard Acer laptop into a hardened, headless Linux home server, managing everything from network-wide ad-blocking with Pi-hole to automated remote control via an AI-integrated Telegram bot.</p>
+          <p>My 1,000+ hours of hands-on experience aren't just about making things work — they are about understanding the threat surface. I analyze system logs, trace network anomalies, and practice server hardening to ensure my infrastructure is as secure as it is functional. Currently, I am applying these skills to develop <strong>PicoClaw</strong>, an AI-powered server control system designed to bridge automation and secure access.</p>
           <div class="about-stats">
             <div class="astat">
               <span class="astat-num" data-target="6">0</span>
@@ -139,7 +148,7 @@
           </div>
         </div>
         <div class="about-side reveal">
-          <div class="info-card glow-card">
+          <div class="info-card glow-card card-3d">
             <h3 class="info-card-title"><i class="fas fa-bolt"></i> Strengths</h3>
             <ul class="info-list">
               <li><i class="fas fa-check-circle"></i> Learns by doing, not just reading</li>
@@ -148,7 +157,7 @@
               <li><i class="fas fa-check-circle"></i> Persistent when debugging issues</li>
             </ul>
           </div>
-          <div class="info-card glow-card">
+          <div class="info-card glow-card card-3d">
             <h3 class="info-card-title"><i class="fas fa-graduation-cap"></i> Education</h3>
             <ul class="info-list">
               <li><i class="fas fa-check-circle"></i> <strong>12th Std (Science &amp; CS)</strong><br>Govt. Higher Secondary School, Thuduppathi (Expected 2026-27)</li>
@@ -156,7 +165,7 @@
             </ul>
           </div>
           <span id="certs"></span>
-          <div class="info-card glow-card cert-card">
+          <div class="info-card glow-card cert-card card-3d">
             <h3 class="info-card-title"><i class="fas fa-certificate"></i> Certifications</h3>
             <div class="cert-list">
               <!-- Cert 1: GenAI -->
@@ -203,7 +212,113 @@
   <!-- ═══════════════════════════════════
        TELEMETRY DASHBOARD
   ═══════════════════════════════════ -->
-  
+  <section class="telemetry section" id="telemetry">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="sec-tag">~/telemetry</span>
+        <h2 class="sec-title">Server Telemetry</h2>
+        <p class="sec-sub">Live simulated performance of my personal home lab nodes.</p>
+      </div>
+
+      <div class="telemetry-grid">
+        <!-- Node 1: Ubuntu Host -->
+        <div class="tel-card glow-card card-3d reveal">
+          <div class="tel-header">
+            <span class="status-dot pulse"></span>
+            <span class="tel-node-title"><i class="fab fa-linux"></i> ubuntu-homeserver</span>
+          </div>
+          <div class="tel-metrics">
+            <div class="tel-metric">
+              <span class="tel-label">CPU Usage</span>
+              <div class="tel-gauge-wrap">
+                <div class="tel-gauge-bar" id="cpu-bar" style="width: 42%;"></div>
+              </div>
+              <span class="tel-value" id="cpu-val">42%</span>
+            </div>
+            <div class="tel-metric">
+              <span class="tel-label">RAM Usage</span>
+              <div class="tel-gauge-wrap">
+                <div class="tel-gauge-bar" id="ram-bar" style="width: 72%;"></div>
+              </div>
+              <span class="tel-value" id="ram-val">72%</span>
+            </div>
+            <div class="tel-metric">
+              <span class="tel-label">256GB SSD</span>
+              <div class="tel-gauge-wrap">
+                <div class="tel-gauge-bar" style="width: 41%; background: var(--accent-secondary);"></div>
+              </div>
+              <span class="tel-value">41%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 2: DNS Sinkhole (Pi-hole) -->
+        <div class="tel-card glow-card card-3d reveal">
+          <div class="tel-header">
+            <span class="status-dot pulse" style="background:#a855f7; box-shadow: 0 0 8px rgba(168,85,247,0.5);"></span>
+            <span class="tel-node-title"><i class="fas fa-shield-halved"></i> pihole-dns</span>
+          </div>
+          <div class="tel-metrics">
+            <div class="tel-mini-grid">
+              <div class="tel-mini-card">
+                <span class="tel-mini-label">Total Queries</span>
+                <span class="tel-mini-val" id="pihole-queries">84,291</span>
+              </div>
+              <div class="tel-mini-card">
+                <span class="tel-mini-label">Blocked Queries</span>
+                <span class="tel-mini-val" id="pihole-blocked" style="color: #ef4444;">26,130</span>
+              </div>
+              <div class="tel-mini-card">
+                <span class="tel-mini-label">Block Percentage</span>
+                <span class="tel-mini-val" id="pihole-percent" style="color: var(--accent);">31.0%</span>
+              </div>
+              <div class="tel-mini-card">
+                <span class="tel-mini-label">Domains Blocked</span>
+                <span class="tel-mini-val">2.49M</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node 3: Samba Storage & Nginx Network -->
+        <div class="tel-card glow-card card-3d reveal tel-wide">
+          <div class="tel-header">
+            <span class="status-dot pulse" style="background:#10b981; box-shadow: 0 0 8px rgba(16,185,129,0.5);"></span>
+            <span class="tel-node-title"><i class="fas fa-network-wired"></i> Services Status &amp; Traffic</span>
+          </div>
+          <div class="tel-services-list">
+            <div class="tel-service-item">
+              <div class="tel-service-name">
+                <span class="status-dot pulse" style="background:var(--c-nginx);"></span>
+                <span>Nginx Reverse Proxy</span>
+              </div>
+              <span class="tel-service-stats" id="nginx-status">Active (84 req/min)</span>
+            </div>
+            <div class="tel-service-item">
+              <div class="tel-service-name">
+                <span class="status-dot pulse" style="background:var(--c-samba);"></span>
+                <span>Samba SMB Sharing</span>
+              </div>
+              <span class="tel-service-stats" id="samba-status">Active (3 clients connected)</span>
+            </div>
+            <div class="tel-service-item">
+              <div class="tel-service-name">
+                <span class="status-dot pulse" style="background:var(--c-telegram);"></span>
+                <span>Telegram SSH Bot</span>
+              </div>
+              <span class="tel-service-stats" id="tg-status">Active &amp; Listening</span>
+            </div>
+          </div>
+          
+          <!-- Live traffic simulator canvas -->
+          <div class="canvas-wrap">
+            <p class="canvas-label">Active DNS &amp; Proxy Queries Blocked Real-Time</p>
+            <canvas id="telemetry-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════
        PROJECTS
@@ -213,78 +328,16 @@
       <div class="section-head reveal">
         <span class="sec-tag">~/projects</span>
         <h2 class="sec-title">What I've Built</h2>
-        <p class="sec-sub">Practical systems built with software, hardware and local networks.</p>
+        <p class="sec-sub">Real systems, running on real hardware.</p>
       </div>
       <div class="projects-filter reveal">
         <button class="filter-btn active" data-filter="featured">Featured Systems</button>
         <button class="filter-btn" data-filter="github">GitHub Repositories</button>
       </div>
       <div class="projects-grid" id="featured-projects">
-        <!-- ─── GatePulse: Smart Gate Light ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:0ms">
-          <div class="proj-icon-wrap color-server"><i class="fas fa-lightbulb"></i></div>
-          <div class="proj-body">
-            <div class="proj-tags">
-              <span class="ptag">IoT</span>
-              <span class="ptag">Android</span>
-              <span class="ptag">MQTT</span>
-              <span class="ptag">Home Assistant</span>
-              <span class="ptag">ESP8266</span>
-            </div>
-            <h3 class="proj-title">GatePulse — Smart Gate Light</h3>
-            <p class="proj-desc">Smart gate-light automation system using Raspberry Pi, Home Assistant, ESP8266, ESPHome, MQTT and Wi-Fi signal detection.</p>
-
-            <div class="arch-block">
-              <p class="arch-label">Architecture</p>
-              <div class="arch-diagram arch-diagram-wide">
-                <div class="arch-node">
-                  <div class="arch-icon a-phone"><i class="fas fa-mobile-alt"></i></div>
-                  <span>Android</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-lan"><i class="fas fa-wifi"></i></div>
-                  <span>Wi-Fi / RSSI</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-network"><i class="fas fa-diagram-project"></i></div>
-                  <span>MQTT</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-linux"><i class="fab fa-raspberry-pi"></i></div>
-                  <span>Pi / Home Assistant</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-systemd"><i class="fas fa-microchip"></i></div>
-                  <span>ESP8266 / Relay</span>
-                </div>
-                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="arch-node">
-                  <div class="arch-icon a-fw"><i class="fas fa-lightbulb"></i></div>
-                  <span>Gate Light</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="proj-outcome">
-              <p class="arch-label" style="color:var(--accent);"><i class="fas fa-bolt" style="margin-right:6px;"></i>Event-driven design</p>
-              <ul class="outcome-list">
-                <li><i class="fas fa-check-circle"></i> Wi-Fi reconnect triggers one RSSI measurement and one MQTT report—not continuous scanning</li>
-                <li><i class="fas fa-check-circle"></i> Home Assistant evaluates RSSI and time conditions, then owns the three-minute light timer</li>
-                <li><i class="fas fa-check-circle"></i> ESPHome on an ESP8266 controls the relay while retaining physical push-button and wall-switch input</li>
-              </ul>
-            </div>
-
-            <div class="proj-status"><span class="status-dot pulse"></span>Local IoT automation project</div>
-          </div>
-        </article>
-
 
         <!-- ─── Card 1: Home Server ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:0ms">
+        <article class="proj-card glow-card card-3d reveal" style="--delay:0ms">
           <div class="proj-icon-wrap color-server"><i class="fas fa-server"></i></div>
           <div class="proj-body">
             <div class="proj-tags">
@@ -342,7 +395,7 @@
         </article>
 
         <!-- ─── Card 2: Pi-hole ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:80ms">
+        <article class="proj-card glow-card card-3d reveal" style="--delay:80ms">
           <div class="proj-icon-wrap color-pihole"><i class="fas fa-shield-halved"></i></div>
           <div class="proj-body">
             <div class="proj-tags">
@@ -399,12 +452,124 @@
           </div>
         </article>
 
-        
+        <!-- ─── Card 3: Samba ─── -->
+        <article class="proj-card glow-card card-3d reveal" style="--delay:160ms">
+          <div class="proj-icon-wrap color-samba"><i class="fas fa-folder-open"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Samba</span>
+              <span class="ptag">SMB</span>
+              <span class="ptag">Linux</span>
+              <span class="ptag">Auth</span>
+            </div>
+            <h3 class="proj-title">Samba File Sharing System</h3>
+            <p class="proj-desc">Set up a Samba file server on Linux to share directories across Windows and Linux machines. Configured user authentication and share permissions, and debugged common SMB access and credential issues from scratch.</p>
 
-        
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon a-win"><i class="fab fa-windows"></i></div>
+                  <span>Windows</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-smb"><i class="fas fa-network-wired"></i></div>
+                  <span>SMB/LAN</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-samba"><i class="fas fa-folder-open"></i></div>
+                  <span>Samba</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-auth"><i class="fas fa-user-lock"></i></div>
+                  <span>Auth</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-disk"><i class="fas fa-hard-drive"></i></div>
+                  <span>Storage</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--c-samba);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> User-isolated share permissions prevent unauthorized cross-account data access</li>
+                <li><i class="fas fa-check-circle"></i> LAN-only exposure eliminates remote attack surface for the file server</li>
+                <li><i class="fas fa-check-circle"></i> Credential debugging process built understanding of SMB authentication flaws</li>
+              </ul>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Accessible across all devices</div>
+          </div>
+        </article>
+
+        <!-- ─── Card 4: Nginx ─── -->
+        <article class="proj-card glow-card card-3d reveal" style="--delay:240ms">
+          <div class="proj-icon-wrap color-nginx"><i class="fas fa-globe"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">Nginx</span>
+              <span class="ptag">HTML/CSS</span>
+              <span class="ptag">JS</span>
+              <span class="ptag">Web</span>
+            </div>
+            <h3 class="proj-title">Personal Website on Nginx</h3>
+            <p class="proj-desc">Configured Nginx to host a local website from the home server. Managed server blocks, resolved port conflicts with other running services, and made the site accessible across the local network. This portfolio is hosted this way.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon a-browser"><i class="fas fa-laptop"></i></div>
+                  <span>Browser</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-lan"><i class="fas fa-network-wired"></i></div>
+                  <span>LAN</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-nginx"><i class="fas fa-server"></i></div>
+                  <span>Nginx</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-html"><i class="fas fa-code"></i></div>
+                  <span>HTML/CSS</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-files"><i class="fas fa-file-code"></i></div>
+                  <span>/var/www</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--c-nginx);"><i class="fas fa-shield-halved" style="margin-right:6px;"></i>Security Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> Reverse proxy architecture hides backend service topology from clients</li>
+                <li><i class="fas fa-check-circle"></i> Server block isolation ensures services cannot bleed into each other's scope</li>
+                <li><i class="fas fa-check-circle"></i> Port conflict resolution built hands-on understanding of service exposure risks</li>
+              </ul>
+            </div>
+
+            <div class="proj-status"><span class="status-dot pulse"></span>Hosted on local Nginx server</div>
+          </div>
+        </article>
 
         <!-- ─── Card 5: Telegram Bot ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:320ms">
+        <article class="proj-card glow-card card-3d reveal" style="--delay:320ms">
           <div class="proj-icon-wrap color-telegram"><i class="fab fa-telegram"></i></div>
           <div class="proj-body">
             <div class="proj-tags">
@@ -468,7 +633,7 @@
         </article>
 
         <!-- ─── Card 6: AI CCTV Surveillance Prototype ─── -->
-        <article class="proj-card glow-card reveal" style="--delay:400ms">
+        <article class="proj-card glow-card card-3d reveal" style="--delay:400ms">
           <div class="proj-icon-wrap color-cctv"><i class="fas fa-video"></i></div>
           <div class="proj-body">
             <div class="proj-tags">
@@ -532,6 +697,65 @@
           </div>
         </article>
 
+        <!-- ─── Card 7: NEox Compact 40M Drip-Tape Winder ─── -->
+        <article class="proj-card glow-card card-3d reveal" style="--delay:480ms">
+          <div class="proj-icon-wrap" style="color:#14b8a6;"><i class="fas fa-gears"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="ptag">CAD</span>
+              <span class="ptag">CadQuery</span>
+              <span class="ptag">OpenSCAD</span>
+              <span class="ptag">Python</span>
+              <span class="ptag">Mechanical Design</span>
+            </div>
+            <h3 class="proj-title">NEox Compact 40M — Drip-Tape Winder</h3>
+            <p class="proj-desc">Designed a portable, drill-driven machine that winds one continuous 40 m flat drip tape onto a tapered drum, straps the coil and lets it slide off while the valve end stays connected. Delivered the full package: parametric CAD scripts, STEP / STL / GLB models, 6 drawing sheets, a 12-sheet calculation workbook with BOM and fastener register, and an interactive 3D viewer. <a href="https://github.com/neoxey/neox-compact-40m" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">View on GitHub</a></p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-block">
+              <p class="arch-label">Architecture</p>
+              <div class="arch-diagram">
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#ef4444;"><i class="fas fa-screwdriver-wrench"></i></div>
+                  <span>Drill</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#f59e0b;"><i class="fas fa-gear"></i></div>
+                  <span>Gearbox</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon a-linux"><i class="fas fa-grip-lines"></i></div>
+                  <span>Spindle</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#14b8a6;"><i class="fas fa-circle-notch"></i></div>
+                  <span>Drum</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                  <div class="arch-icon" style="color:#0ea5e9;"><i class="fas fa-box"></i></div>
+                  <span>Strapped Coil</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering Outcome -->
+            <div class="proj-outcome">
+              <p class="arch-label" style="color:var(--accent);"><i class="fas fa-check-double" style="margin-right:6px;"></i>Engineering Outcome</p>
+              <ul class="outcome-list">
+                <li><i class="fas fa-check-circle"></i> Found and fixed 5 conflicts in my own v1.0 (bearing fits, cone geometry, ground clearance) using calculations</li>
+                <li><i class="fas fa-check-circle"></i> Analytical safety factors of 5.8 or higher; 3.1 kg machine mass against a 5 kg target</li>
+                <li><i class="fas fa-check-circle"></i> Calculated, CAD-checked and still-to-test items are kept clearly separate in the documentation</li>
+              </ul>
+            </div>
+
+            <div class="proj-status" style="color:var(--c-samba);"><span class="status-dot" style="background:var(--c-samba); box-shadow:0 0 8px rgba(245,158,11,0.5);"></span>Design stage — not yet physically built or tested</div>
+          </div>
+        </article>
+
       </div>
       <div class="projects-grid" id="github-projects" style="display: none;">
         <!-- Injected dynamically by script.js -->
@@ -547,11 +771,11 @@
       <div class="section-head reveal">
         <span class="sec-tag">~/skills</span>
         <h2 class="sec-title">My Toolkit</h2>
-        <p class="sec-sub">Technologies I have used while building practical systems.</p>
+        <p class="sec-sub">Learned hands-on, not from slides.</p>
       </div>
       <div class="skills-layout">
         <div class="skill-rings reveal">
-          <h3 class="skills-heading">Core Strengths</h3>
+          <h3 class="skills-heading">Proficiency</h3>
           <div class="rings-grid">
             <div class="ring-item" data-value="88" data-color="#00f2c3">
               <div class="ring-svg-wrap">
@@ -583,6 +807,26 @@
               </div>
               <div class="ring-label"><i class="fas fa-terminal"></i> SSH &amp; Networks</div>
             </div>
+            <div class="ring-item" data-value="78" data-color="#10b981">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="78" style="--ring-color:#10b981"/>
+                </svg>
+                <span class="ring-pct" style="color:#10b981">78%</span>
+              </div>
+              <div class="ring-label"><i class="fas fa-server"></i> Nginx Server</div>
+            </div>
+            <div class="ring-item" data-value="70" data-color="#f59e0b">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 80 80" class="ring-svg">
+                  <circle class="ring-track" cx="40" cy="40" r="32"/>
+                  <circle class="ring-fill" cx="40" cy="40" r="32" data-pct="70" style="--ring-color:#f59e0b"/>
+                </svg>
+                <span class="ring-pct" style="color:#f59e0b">70%</span>
+              </div>
+              <div class="ring-label"><i class="fas fa-folder-open"></i> Samba Sharing</div>
+            </div>
             <div class="ring-item" data-value="40" data-color="#a855f7">
               <div class="ring-svg-wrap">
                 <svg viewBox="0 0 80 80" class="ring-svg">
@@ -600,20 +844,17 @@
           <div class="icons-grid">
             <div class="sic"><div class="sic-icon" style="color:#f97316;"><i class="fab fa-linux"></i></div><span>Linux</span></div>
             <div class="sic"><div class="sic-icon" style="color:#22d3ee;"><i class="fas fa-terminal"></i></div><span>Bash / CLI</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#10b981;"><i class="fas fa-server"></i></div><span>Nginx</span></div>
             <div class="sic"><div class="sic-icon" style="color:#00f2c3;"><i class="fas fa-key"></i></div><span>SSH</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#a855f7;"><i class="fas fa-shield-halved"></i></div><span>Pi-hole</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#f59e0b;"><i class="fas fa-folder-open"></i></div><span>Samba</span></div>
             <div class="sic"><div class="sic-icon" style="color:#3b82f6;"><i class="fas fa-network-wired"></i></div><span>Networking</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#06b6d4;"><i class="fas fa-sitemap"></i></div><span>DNS / DHCP</span></div>
             <div class="sic"><div class="sic-icon" style="color:#e34c26;"><i class="fas fa-code"></i></div><span>HTML / CSS</span></div>
             <div class="sic"><div class="sic-icon" style="color:#f1e05a;"><i class="fab fa-js"></i></div><span>JavaScript</span></div>
             <div class="sic"><div class="sic-icon" style="color:#3572a5;"><i class="fab fa-python"></i></div><span>Python (Basic)</span></div>
             <div class="sic"><div class="sic-icon" style="color:#ef4444;"><i class="fas fa-user-shield"></i></div><span>Cyber Security</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#c51a4a;"><i class="fab fa-raspberry-pi"></i></div><span>Raspberry Pi</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#0db7ed;"><i class="fab fa-docker"></i></div><span>Docker</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#7c3aed;"><i class="fas fa-diagram-project"></i></div><span>MQTT</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#22c55e;"><i class="fas fa-microchip"></i></div><span>ESP8266 / ESPHome</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#38bdf8;"><i class="fas fa-house-signal"></i></div><span>Home Assistant</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#00979d;"><i class="fas fa-microchip"></i></div><span>Arduino</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#a4c639;"><i class="fab fa-android"></i></div><span>Android / Kotlin</span></div>
-            <div class="sic"><div class="sic-icon" style="color:#f59e0b;"><i class="fas fa-wifi"></i></div><span>Wi-Fi / RSSI</span></div>
+            <div class="sic"><div class="sic-icon" style="color:#e879f9;"><i class="fas fa-video"></i></div><span>RTSP</span></div>
           </div>
         </div>
       </div>
@@ -638,7 +879,7 @@
             <div class="tl-dot" style="background:var(--c-samba);"></div>
             <div class="tl-line"></div>
           </div>
-          <div class="tl-card glow-card">
+          <div class="tl-card glow-card card-3d">
             <span class="tl-year" style="color:var(--c-samba);">2023</span>
             <h3 class="tl-title">Web Designing Certificate — A+ Grade</h3>
             <p class="tl-desc">Completed a formal Web Designing course at <strong>Apollo Computer Education Ltd.</strong>, mastering HTML, CSS, JavaScript and Photoshop with top marks.</p>
@@ -654,7 +895,7 @@
             <div class="tl-dot" style="background:var(--c-server);"></div>
             <div class="tl-line"></div>
           </div>
-          <div class="tl-card glow-card">
+          <div class="tl-card glow-card card-3d">
             <span class="tl-year" style="color:var(--c-server);">2024</span>
             <h3 class="tl-title">Built a Headless Linux Home Server</h3>
             <p class="tl-desc">Repurposed an old government-issued Acer laptop into a full headless Ubuntu server node. Configured systemd, SSH key auth, UFW firewall, and used the laptop battery as a built-in UPS.</p>
@@ -670,12 +911,12 @@
             <div class="tl-dot" style="background:var(--c-pihole);"></div>
             <div class="tl-line"></div>
           </div>
-          <div class="tl-card glow-card">
+          <div class="tl-card glow-card card-3d">
             <span class="tl-year" style="color:var(--c-pihole);">2024</span>
-            <h3 class="tl-title">Expanded from Linux into Networking and Raspberry Pi</h3>
-            <p class="tl-desc">Built practical networking knowledge through homelab work, then began applying it to Raspberry Pi and local IoT automation projects.</p>
+            <h3 class="tl-title">Deployed Pi-hole + Samba + Nginx on Homelab</h3>
+            <p class="tl-desc">Expanded the homelab with a Pi-hole DNS sinkhole blocking 31% of all queries, a Samba SMB file server for cross-platform sharing, and Nginx as a reverse proxy for local services.</p>
             <div class="tl-tags">
-              <span>Linux</span><span>Networking</span><span>Raspberry Pi</span><span>IoT</span>
+              <span>Pi-hole</span><span>Samba</span><span>Nginx</span><span>DNS</span>
             </div>
           </div>
         </div>
@@ -686,7 +927,7 @@
             <div class="tl-dot" style="background:var(--c-telegram);"></div>
             <div class="tl-line"></div>
           </div>
-          <div class="tl-card glow-card">
+          <div class="tl-card glow-card card-3d">
             <span class="tl-year" style="color:var(--c-telegram);">2025</span>
             <h3 class="tl-title">Built Telegram Remote Server Bot with AI</h3>
             <p class="tl-desc">Developed a Python Telegram bot to remotely control the home server via phone. Integrated an AI layer (PicoClaw + OpenRouter) to interpret natural language commands into safe Bash scripts.</p>
@@ -701,10 +942,10 @@
           <div class="tl-dot-wrap">
             <div class="tl-dot tl-dot-pulse" style="background:var(--accent);"></div>
           </div>
-          <div class="tl-card glow-card tl-card-active">
+          <div class="tl-card glow-card card-3d tl-card-active">
             <span class="tl-year" style="color:var(--accent);">2026 — Now</span>
             <h3 class="tl-title">Generative AI Mastermind Certificate</h3>
-            <p class="tl-desc">Completed the Generative AI Mastermind course at <strong>Outskill</strong>, deepening knowledge of LLMs, Prompt Engineering, ChatGPT and API integration. Continuing the path from Linux and networking into IoT, home automation and <strong>Cybersecurity</strong>.</p>
+            <p class="tl-desc">Completed the Generative AI Mastermind course at <strong>Outskill</strong>, deepening knowledge of LLMs, Prompt Engineering, ChatGPT and API integration. Actively building toward a career in <strong>Ethical Hacking &amp; SOC Analysis</strong>.</p>
             <div class="tl-tags">
               <span>LLMs</span><span>Prompt Engineering</span><span>ChatGPT</span><span>SOC</span>
             </div>
